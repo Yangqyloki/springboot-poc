@@ -94,4 +94,7 @@ https://www.jianshu.com/p/14ffe0f3db94
 
 1. Call GET http://localhost:10089/**unit-proxy**/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units you can get response
 
-2. Edit the .properties file https://github.wdf.sap.corp/CNACC/config-repo/blob/master/zuul-gateway.properties, change the line `zuul.routes.unit-service=/unit-proxy/**` to `zuul.routes.custom-unit-service=/unit-proxy/**`. Then call POST http://localhost:10089/actuator/refresh, and re-call http://localhost:10089/unit-proxy/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units, you can get response with **address**
+2. 
+ - Edit the .properties file https://github.wdf.sap.corp/CNACC/config-repo/blob/master/zuul-gateway.properties, change the line `zuul.routes.unit-service=/unit-proxy/**` to `zuul.routes.custom-unit-service=/unit-proxy/**`. 
+ - Call POST http://localhost:10089/actuator/refresh
+ - Re-call http://localhost:10089/unit-proxy/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units, you can get response with **address**
