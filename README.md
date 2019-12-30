@@ -42,10 +42,11 @@ https://www.jianshu.com/p/14ffe0f3db94
 
 ### run unit service
 
-3. get units for user with asagent token
+1. run eureka-server and unit-service
+2. get units for user with asagent token
 	GET http://127.0.0.1:10086/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units 
 
-4. create units for user with asagent token
+3. create units for user with asagent token
 	POST http://127.0.0.1:10086/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units 新增一个unit
 
 	```
@@ -57,7 +58,7 @@ https://www.jianshu.com/p/14ffe0f3db94
 	}
 	```
 
-5. create user for unit (this step will trigger connect to rabbitMQ and create queue)
+4. create user for unit (this step will trigger connect to rabbitMQ and create queue)
 	http://127.0.0.1:10086/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units/unitIdTest/customers
 	```
 	{
@@ -75,3 +76,7 @@ https://www.jianshu.com/p/14ffe0f3db94
 ### run user service
 
 **Should wait step 5 above is run or else there's error for trying to get message queue which is not exist!!!**
+
+### run custom-unit service
+1. Run custom-unit-service
+2. Call GET method http://localhost:10088/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units and you will see unit address in results 
