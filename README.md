@@ -3,7 +3,7 @@
 
 
 ## env prepare:
-1. install mongodb and create db using MongoDB.sql
+1. install mongodb and create db using ``MongoDB.sql``
 2. install rabbitMQ
 https://www.jianshu.com/p/14ffe0f3db94
 
@@ -38,16 +38,22 @@ https://www.jianshu.com/p/14ffe0f3db94
 		```sudo keytool -import -alias hybris -file hybris.pem -keystore /usr/lib/jvm/java/jre/lib/security/cacerts```
 
 	-------------------------------------------
+## Application startup sequence
 
+1. Start `config-server`
+2. Start `eureka-server`
+3. Start `unit-service`
+4. Start `gateway`
+5. (OPTIONAL) Star `user-service`
+6. (OPTIONAL) Star `custom-unit-service`
 
-### run unit service
+### Use cases for unit-service
 
-1. run eureka-server and unit-service
-2. get units for user with asagent token
+1. Get units for user with asagent token
 	GET http://127.0.0.1:10086/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units 
 
-3. create units for user with asagent token
-	POST http://127.0.0.1:10086/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units 新增一个unit
+2. Create units for user with asagent token
+	POST http://127.0.0.1:10086/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units 
 
 	```
 	{
@@ -58,7 +64,7 @@ https://www.jianshu.com/p/14ffe0f3db94
 	}
 	```
 
-4. create user for unit (this step will trigger connect to rabbitMQ and create queue)
+3. Create user for unit (this step will trigger connect to rabbitMQ and create queue)
 	http://127.0.0.1:10086/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units/unitIdTest/customers
 	```
 	{
@@ -71,12 +77,21 @@ https://www.jianshu.com/p/14ffe0f3db94
 		"roles":["customergroup","b2bgroup"]
 	}
 	```
+ - All APIs will validate if User is b2b admin, which is implemented by AOP
+ - Create user for unit API will validate email and mobile in **Kyma**
+ - It provides some logic before/after createCustomerForUnit, which is implemented by AOP
 
 
-### run user service
+### Use cases for user-service
 
 **Should wait step 5 above is run or else there's error for trying to get message queue which is not exist!!!**
 
-### run custom-unit service
-1. Run custom-unit-service
-2. Call GET method http://localhost:10088/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units and you will see unit address in results 
+### Use cases for custom-unit-service
+
+1. Call GET method http://localhost:10088/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units and you will see unit address in results 
+
+### Use cases for gateway
+
+1. Call GET http://localhost:10089/**unit-proxy**/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units you can get response
+
+2. Edit the .properties file https://github.wdf.sap.corp/CNACC/config-repo/blob/master/zuul-gateway.properties, change the line `zuul.routes.unit-service=/unit-proxy/**` to `zuul.routes.custom-unit-service=/unit-proxy/**`. Then call POST http://localhost:10089/actuator/refresh, and re-call http://localhost:10089/unit-proxy/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units, you can get response with **address**
