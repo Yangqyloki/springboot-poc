@@ -46,7 +46,7 @@ public class DefaultUnitClient implements UnitClient
 	}
 
 	@Override
-	public UnitDTO createCustomerForUnit(final String unitId, final CustomerDTO customer)
+	public void createCustomerForUnit(final String unitId, final CustomerDTO customer)
 	{
 		System.out.println("createCustomerForUnit");
 		unitDao.saveUnitCustomer(unitId, customer);
@@ -57,7 +57,7 @@ public class DefaultUnitClient implements UnitClient
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
-		return unitDao.findUnitByUnitId(unitId);
+
 	}
 
 }

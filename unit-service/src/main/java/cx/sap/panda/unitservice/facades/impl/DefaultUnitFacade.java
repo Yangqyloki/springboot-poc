@@ -63,7 +63,8 @@ public class DefaultUnitFacade implements UnitFacade
 		}
 		userClient.createCustomer(userId, baseSiteId, authToken, DTOConverter.convertCustomer(customer));
 //			userClient.setCustomerToUserGroup(userId,baseSiteId,authToken, customer);
-		UnitDTO unitResult = unitClient.createCustomerForUnit(unitId, customer);
+		unitClient.createCustomerForUnit(unitId, customer);
+		UnitDTO unitResult = unitClient.getUnitById(unitId);
 		return ResultDTOUtil.success(unitResult);
 	}
 

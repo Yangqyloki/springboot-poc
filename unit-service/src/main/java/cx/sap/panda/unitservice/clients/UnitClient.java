@@ -15,5 +15,5 @@ public interface UnitClient
 
 	UnitDTO getUnitById(String unitId);
 
-	UnitDTO createCustomerForUnit(String unitId, CustomerDTO customer);
+	void createCustomerForUnit(String unitId, CustomerDTO customer);
 }

@@ -16,9 +16,9 @@ public class QueueConsumer {
     public void receiveMessage(final byte[] message) {
         try {
             latch.await(10000, TimeUnit.MILLISECONDS);
-//            System.out.println("Received (String) " + new String(message));
+            System.out.println("Received (String) " + new String(message));
             final NotificationDTO notification = mapper.readValue(new String(message), NotificationDTO.class);
-//            System.out.println(mapper.writeValueAsString(notification.getMessage()));
+            System.out.println(mapper.writeValueAsString(notification.getMessage()));
         } catch (final Exception e) {
             e.printStackTrace();
         }
