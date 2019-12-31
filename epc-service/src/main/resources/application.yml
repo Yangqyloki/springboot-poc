@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mutiltenantall
+    username: root
+    password: Ty_19901130
+    type: com.alibaba.druid.pool.DruidDataSource
+
+server:
+  port: 8899
+
+epc:
+  url: jdbc:mysql://localhost:3306/tenant_default
+
+## RabbitMQ
+epcservice:
+  rabbitmq:
+    receive-queue: epc.service.queue
+    exchange: epc.service.exchange
+    routing-key: epc.service.#
