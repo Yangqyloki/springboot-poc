@@ -1,14 +1,12 @@
-# commerce-org micro service
+# Dummy commerce-org micro service based on spring boot
 
-
-
-## env prepare:
+## Preparations:
+### Env prepare
 1. install mongodb and create db using ``MongoDB.sql``
 2. install rabbitMQ
 https://www.jianshu.com/p/14ffe0f3db94
 
-
-## using steps:
+### Install certificate in local:
 1. get token for asagent from b2b commerce
 
 2. generate certification for commerce or else there's security exception when unitservice try to call commerce api.
@@ -47,6 +45,7 @@ https://www.jianshu.com/p/14ffe0f3db94
 5. (OPTIONAL) Star `user-service`
 6. (OPTIONAL) Star `custom-unit-service`
 
+## User cases
 ### Use cases for unit-service
 
 1. Get units for user with asagent token
@@ -98,3 +97,5 @@ https://www.jianshu.com/p/14ffe0f3db94
  - Edit the .properties file https://github.wdf.sap.corp/CNACC/config-repo/blob/master/zuul-gateway.properties, change the line `zuul.routes.unit-service=/unit-proxy/**` to `zuul.routes.custom-unit-service=/unit-proxy/**`. 
  - Call POST http://localhost:10089/actuator/refresh
  - Re-call http://localhost:10089/unit-proxy/unitservice/v1/powertools/users/linda.wolf@rustic-hw.com/units, you can get response with **address**
+ 
+3. Call GET http://localhost:10089//gateway-forward/v1/powertools/users/linda.wolf@rustic-hw.com/units ,you can get a **Combined result**. The unit comes from unit-service, and the user comes from b2b-commerce
