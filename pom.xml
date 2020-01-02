@@ -13,8 +13,8 @@
         <module>custom-unit-service</module>
         <module>epc-service</module>
         <module>gateway</module>
-        <module>target</module>
         <module>unit-service</module>
-        <module>user-service	</module>
+        <module>user-service</module>
+        <module>eureka-server</module>
     </modules>
 </project>

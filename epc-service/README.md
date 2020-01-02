@@ -5,7 +5,7 @@ extension point service for schema base:
     · one tenant for one schema
     
 2. you can operate the table by swagger-ui.
-    · address http://localhost:8080/swagger-ui.html
+    · address http://localhost:8899/swagger-ui.html
     · the tenantId can exchange the schema
 
 3. you need a running rabbit and a queue with name 'epc.service.queue
