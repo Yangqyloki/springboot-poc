@@ -45,7 +45,7 @@ https://www.jianshu.com/p/14ffe0f3db94
 5. (OPTIONAL) Star `user-service`
 6. (OPTIONAL) Star `custom-unit-service`
 
-## User cases
+## Use cases
 ### Use cases for unit-service
 
 1. Get units for user with asagent token
