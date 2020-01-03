@@ -17,7 +17,6 @@ public class TenantController {
     @PostMapping
     public @ResponseBody
     String addNewTenant(
-            @RequestParam String tenantId,
             @RequestParam Integer id,
             @RequestParam String tenantCode,
             @RequestParam String kymaLm) {
@@ -34,7 +33,6 @@ public class TenantController {
     @GetMapping(value = "/{tenantCode}")
     public @ResponseBody
     Optional<Tenant> getTenant(
-            @RequestParam String tenantId,
             @PathVariable String tenantCode) {
         return tenantRepository.findTenantByTenantCode(tenantCode);
     }
@@ -42,7 +40,6 @@ public class TenantController {
     @PutMapping(value = "/{tenantCode}")
     public @ResponseBody
     Tenant updateTenant(
-            @RequestParam String tenantId,
             @PathVariable String tenantCode,
             @RequestParam String kymalm) {
         Optional<Tenant> optionalTenant = tenantRepository.findTenantByTenantCode(tenantCode);

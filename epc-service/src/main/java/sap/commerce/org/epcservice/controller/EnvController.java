@@ -21,14 +21,13 @@ public class EnvController  {
     @PostMapping
     public @ResponseBody
     String addNewTenant(
-            @RequestParam String tenantId,
             @RequestParam Integer id,
-            @RequestParam String envid,
+            @RequestParam String envCode,
             @RequestParam String kymaLm) {
 
         Env env = new Env();
         env.setId(id);
-        env.setEnvCode(envid);
+        env.setEnvCode(envCode);
         env.setKymalm(kymaLm);
 
         envRepository.save(env);
@@ -38,7 +37,6 @@ public class EnvController  {
     @GetMapping(value = "/{envCode}")
     public @ResponseBody
     Optional<Env> getTenant(
-            @RequestParam String tenantId,
             @PathVariable String envCode) {
         return envRepository.findEnvByEnvCode(envCode);
     }
@@ -46,7 +44,6 @@ public class EnvController  {
     @PutMapping(value = "/{envCode}")
     public @ResponseBody
     Env updateTenant(
-            @RequestParam String tenantId,
             @PathVariable String envCode,
             @RequestParam String kymalm) {
         Optional<Env> optionalEnv = envRepository.findEnvByEnvCode(envCode);
@@ -61,7 +58,6 @@ public class EnvController  {
     @DeleteMapping(value = "/{envCode}")
     public @ResponseBody
     void deleteTenant(
-            @RequestParam String tenantId,
             @PathVariable String envCode) {
         envRepository.deleteEnvByEnvCode(envCode);
     }
