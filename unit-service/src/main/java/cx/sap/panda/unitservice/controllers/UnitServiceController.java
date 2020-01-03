@@ -46,7 +46,7 @@ public class UnitServiceController
 	@PostMapping(UNIT_SERVICE_CREATE_CUSTOMER)
 	@KymaValidator
 	@UnitAdminValidator
-	public ResultDTO CreateCustomerForUnit(@PathVariable String baseSiteId, @PathVariable String userId, @PathVariable String unitId, @RequestHeader("Authorization") String authToken, @RequestBody CustomerDTO customer)
+	public ResultDTO createCustomerForUnit(@PathVariable String baseSiteId, @PathVariable String userId, @PathVariable String unitId, @RequestHeader("Authorization") String authToken, @RequestBody CustomerDTO customer)
 	{
 		return unitFacade.createCustomerForUnit(userId, baseSiteId,unitId ,authToken, customer);
 	}

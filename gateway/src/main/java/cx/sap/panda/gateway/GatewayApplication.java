@@ -15,7 +15,6 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableZuulProxy
-@RestController
 public class GatewayApplication
 {
 

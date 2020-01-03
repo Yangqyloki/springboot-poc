@@ -1,7 +1,11 @@
 package cx.sap.panda.gateway.controllers;
 
+import com.google.gson.Gson;
+import com.netflix.discovery.DiscoveryManager;
+import com.netflix.discovery.guice.EurekaModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -34,7 +38,6 @@ public class GateWayController
 
 	@Autowired
 	RestTemplate restTemplate;
-
 
 	@GetMapping(UNIT_SERVICE_UNITS)
 	public Map getUnits(@PathVariable String baseSiteId, @PathVariable String userId, @RequestHeader("Authorization") String authToken, HttpServletRequest request)
