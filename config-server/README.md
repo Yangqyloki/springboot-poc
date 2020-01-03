@@ -1,4 +1,4 @@
-#Config Server
+# Config Server
 This is a config server which enables other micro service get configuration through this server.
 ## How to config
 1. Upload your .properties to https://github.wdf.sap.corp/CNACC/config-repo and named with the service name
