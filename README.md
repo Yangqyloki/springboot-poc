@@ -38,12 +38,11 @@ https://www.jianshu.com/p/14ffe0f3db94
 	-------------------------------------------
 ## Application startup sequence
 
-1. Start `config-server`
-2. Start `eureka-server`
-3. Start `unit-service`
-4. Start `gateway`
-5. (OPTIONAL) Star `user-service`
-6. (OPTIONAL) Star `custom-unit-service`
+1. Start `eureka-server`
+2. Start `unit-service`
+3. Start `gateway`
+4. (OPTIONAL) Star `user-service`
+5. (OPTIONAL) Star `custom-unit-service`
 
 ## Use cases
 ### Use cases for unit-service
