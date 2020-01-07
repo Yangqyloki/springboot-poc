@@ -26,3 +26,9 @@ management.endpoints.web.exposure.include=refresh <--allow runtime refresh
 ```
 After this, you can start your service with config in config server. 
 When you change the config, Call POST http://{ip}:{port}/actuator/refresh to refresh it.
+
+## More info
+The links below show how to support **multi tenancy** in config server
+https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_server.html#_pattern_matching_and_multiple_repositories
+http://www.itmuch.com/spring-cloud/finchley-20/
+
