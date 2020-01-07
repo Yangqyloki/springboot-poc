@@ -1,5 +1,6 @@
 package cx.sap.panda.unitservice;
 
+import cx.sap.panda.unitservice.epstarter.RegisterExtensionPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 //@EnableEurekaClient
 @EnableDiscoveryClient
 @SpringBootApplication
+@RegisterExtensionPoint
 public class UnitServiceApplication
 {
 	@Autowired
