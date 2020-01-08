@@ -106,3 +106,19 @@ https://www.jianshu.com/p/14ffe0f3db94
 2. you can operate the table by swagger-ui. · address http://localhost:8899/swagger-ui.html · the tenantId can exchange the schema
 
 3. you need a running rabbit and a queue with name 'epc.service.queue '. · you can send the message to the epc service by the message like: { "user": "customer1", "role": "role1", "tenantId": "tenant1", "environmentId": "env1" } · the tenantId decide which tenant/schema.
+
+#### Use case for multitenant-spring-boot-starter
+1. create a SpringBoot project with groupId : cx.sap.panda 
+
+2. mvn clean install to publish this starter in to your local maven repository.
+
+3. add the dependency into your pom.xml
+    <dependency>
+      <groupId>cx.sap.panda</groupId>
+      <artifactId>multitenant-spring-boot-starter</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+4. deploy your project with multi-tenant by schema base. And make the tenant-id in to request header:
+    {"key":"tenantId","value":"tenant2"}
+
