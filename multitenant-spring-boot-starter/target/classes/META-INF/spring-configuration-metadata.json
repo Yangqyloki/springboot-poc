@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "example.service",
+      "type": "cx.sap.panda.service.StarterServiceProperties",
+      "sourceType": "cx.sap.panda.service.StarterServiceProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "example.service.config",
+      "type": "java.lang.String",
+      "sourceType": "cx.sap.panda.service.StarterServiceProperties"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,11 @@
+META-INF/spring-configuration-metadata.json
+cx/sap/panda/service/StarterServiceProperties.class
+cx/sap/panda/multitenant/MultiTenantConnectionProviderImpl.class
+cx/sap/panda/MultiTenantAutoConfigurer.class
+cx/sap/panda/filter/TenantFilter.class
+cx/sap/panda/exception/EpcException.class
+cx/sap/panda/StarterAutoConfigure.class
+cx/sap/panda/service/StarterService.class
+cx/sap/panda/data/TenantContext.class
+cx/sap/panda/exception/InsufficientUserRightsException.class
+cx/sap/panda/multitenant/TenantIdentifierResolver.class

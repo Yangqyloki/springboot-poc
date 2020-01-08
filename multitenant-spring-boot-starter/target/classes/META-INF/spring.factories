@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cx.sap.panda.MultiTenantAutoConfigurer
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=cx.sap.panda.StarterAutoConfigure

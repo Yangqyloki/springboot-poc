@@ -16,5 +16,6 @@
         <module>unit-service</module>
         <module>user-service</module>
         <module>eureka-server</module>
+        <module>multitenant-spring-boot-starter</module>
     </modules>
 </project>
