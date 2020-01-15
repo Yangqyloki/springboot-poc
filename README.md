@@ -5,6 +5,8 @@
 1. install mongodb and create db using ``MongoDB.sql``
 2. install rabbitMQ
 https://www.jianshu.com/p/14ffe0f3db94
+3. install dependency 
+https://github.wdf.sap.corp/CNACC/extension-point-common
 
 ### Install certificate in local:
 1. get token for asagent from b2b commerce
