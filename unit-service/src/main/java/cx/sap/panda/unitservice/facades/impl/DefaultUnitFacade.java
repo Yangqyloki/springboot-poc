@@ -1,6 +1,5 @@
 package cx.sap.panda.unitservice.facades.impl;
 
-import cx.sap.panda.unitservice.aop.annotations.ExtensionPointTemplate;
 import cx.sap.panda.unitservice.clients.UnitClient;
 import cx.sap.panda.unitservice.clients.UserClient;
 import cx.sap.panda.unitservice.dto.CustomerDTO;
@@ -13,6 +12,7 @@ import cx.sap.panda.unitservice.utils.DTOConverter;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import sap.cx.panda.extensionpoint.annotations.ExtensionPointTemplate;
 
 import java.util.List;
 import java.util.Objects;

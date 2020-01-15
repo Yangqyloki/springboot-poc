@@ -10,6 +10,7 @@ import cx.sap.panda.unitservice.rabbitmq.QueueProducer;
 import cx.sap.panda.unitservice.utils.DTOConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import sap.cx.panda.extensionpoint.annotations.ExtensionPointTemplate;
 
 import java.util.List;
 
@@ -46,6 +47,7 @@ public class DefaultUnitClient implements UnitClient
 	}
 
 	@Override
+	@ExtensionPointTemplate
 	public void createCustomerForUnit(final String unitId, final CustomerDTO customer)
 	{
 		System.out.println("createCustomerForUnit");

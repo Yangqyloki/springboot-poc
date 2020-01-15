@@ -21,6 +21,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>sap.cx.panda</groupId>
+            <artifactId>extension-point-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
             <version>0.9.11</version>
