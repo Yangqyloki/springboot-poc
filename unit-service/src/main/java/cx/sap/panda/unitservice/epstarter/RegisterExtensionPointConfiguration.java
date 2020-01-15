@@ -1,5 +1,6 @@
 package cx.sap.panda.unitservice.epstarter;
 
+import cx.sap.panda.unitservice.aop.annotations.ExtensionPointTemplate;
 import cx.sap.panda.unitservice.aop.annotations.UnitAdminValidator;
 import org.reflections.Reflections;
 import org.reflections.scanners.MethodAnnotationsScanner;
@@ -28,7 +29,7 @@ public class RegisterExtensionPointConfiguration implements ApplicationContextAw
 //		}
 		System.out.println("########## This method will get all methods which use **UnitAdminValidator** Annotation ##########");
 		System.out.println("########## These points can be provided by config(DS must provide), or this method scan them");
-		Set<Method> methodsAnnotatedWith = new Reflections("", new MethodAnnotationsScanner()).getMethodsAnnotatedWith(UnitAdminValidator.class);
+		Set<Method> methodsAnnotatedWith = new Reflections("", new MethodAnnotationsScanner()).getMethodsAnnotatedWith(ExtensionPointTemplate.class);
 		methodsAnnotatedWith.forEach(e -> {
 
 			System.out.println("########## " + e.getName()+" ##########");

@@ -1,5 +1,6 @@
 package cx.sap.panda.unitservice.facades.impl;
 
+import cx.sap.panda.unitservice.aop.annotations.ExtensionPointTemplate;
 import cx.sap.panda.unitservice.clients.UnitClient;
 import cx.sap.panda.unitservice.clients.UserClient;
 import cx.sap.panda.unitservice.dto.CustomerDTO;
@@ -30,6 +31,7 @@ public class DefaultUnitFacade implements UnitFacade
 	private UnitClient unitClient;
 
 	@Override
+	@ExtensionPointTemplate
 	public ResultDTO getUnitsByUser(final String userId, final String baseSiteId, final String authToken)
 	{
 		List<UnitDTO> unitList = unitClient.getUnitsByUser(userId);
@@ -37,6 +39,7 @@ public class DefaultUnitFacade implements UnitFacade
 	}
 
 	@Override
+	@ExtensionPointTemplate
 	public ResultDTO createUnit(final String userId, final String baseSiteId, final String authToken, final UnitDTO unit)
 	{
 		List<UnitDTO> allUnits = unitClient.getAllUnits();
